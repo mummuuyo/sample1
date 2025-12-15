@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="ko">
 <head>
 <meta charset="UTF-8" />
@@ -11,7 +12,7 @@
   --chip: rgba(31,41,55,0.92);      /* 타이틀 배지 색 */
   --radius: 22px;                   /* 모서리 둥글기 */
   --stroke: rgba(13,13,13,0.22);    /* 기본 테두리 */
-  --ring: rgba(13,13,13,0.35);      /* ✅ 링(선명, 페더 없음) */
+  --ring: rgba(13,13,13,0.35);      /* 링(선명, 페더 없음) */
 }
 
 *{ box-sizing: border-box; }
@@ -29,11 +30,11 @@ body{
   padding: 14px 0 8px;
 }
 
-/* 타이틀 */
+/* ===== 메인 타이틀 ===== */
 .title-wrap{
   display: flex;
   justify-content: center;
-  padding: 6px 0 16px;
+  padding: 6px 0 18px;
 }
 .page-title{
   margin: 0;
@@ -47,6 +48,24 @@ body{
   letter-spacing: 0.01em;
 }
 
+/* ===== 섹션 타이틀 (카테고리 분리) ===== */
+.section-title{
+  display: flex;
+  justify-content: center;
+  margin: 24px 0 14px;
+}
+.section-title h2{
+  margin: 0;
+  display: inline-block;
+  padding: 10px 46px;
+  border-radius: 999px;
+  background: var(--chip);
+  color: #fff;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+
 /* ✅ 9개 그리드 */
 .grid{
   display: grid;
@@ -56,10 +75,10 @@ body{
   justify-items: center;
 }
 
-/* 카드 폭 (그리드가 알아서 맞춤) */
+/* ✅ 카드 폭: 기존 320px의 0.8배 = 256px */
 .card{
   width: 100%;
-  max-width: 320px; /* ✅ 박스 크기 조절 (280~340 추천) */
+  max-width: 256px;
 }
 
 /* ✅ 정사각형 + 호버 효과 */
@@ -71,24 +90,23 @@ body{
   background: #fff;
   border: 2px solid var(--stroke);
 
-  /* 애니메이션 */
   transform-origin: center;
   transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
 }
 
-/* GIF */
+/* 이미지 */
 .square img{
   width: 100%;
   height: 100%;
-  object-fit: cover; /* 꽉 채우기 (원하면 contain으로) */
+  object-fit: cover;
   display: block;
 }
 
-/* ✅ 호버 시: 살짝 확대 + 선명한 링(페더 없음) */
+/* ✅ 호버 시: 1.05 확대 + 선명한 링(페더 없음) */
 .square:hover{
-  transform: scale(1.02);
-  border-color: rgba(13,13,13,0.55);
-  box-shadow: 0 0 0 3px var(--ring); /* blur 0 = 페더 없음 */
+  transform: scale(1.05);
+  border-color: rgba(13,13,13,0.6);
+  box-shadow: 0 0 0 3px var(--ring); /* blur 0 */
 }
 
 /* 소제목 (아래 중앙) */
@@ -107,65 +125,72 @@ body{
   .grid{ grid-template-columns: 1fr; }
 }
 </style>
+
 </head>
 
 <body>
   <div class="wrapper">
 
-    <!-- ✅ 타이틀 -->
-    <div class="title-wrap">
-      <h1 class="page-title">리깅 디테일
-    </div>
+```
+<!-- ✅ 메인 타이틀 -->
+<div class="title-wrap">
+  <h1 class="page-title">리깅 디테일</h1>
+</div>
 
-    <!-- ✅ 9개 정사각형 -->
-    <div class="grid">
+<!-- ================= 섹션 1 ================= -->
+<div class="section-title">
+  <h2>몸 물리</h2>
+</div>
 
-      <div class="card">
-        <div class="square"><img src="https://i.imgur.com/2Squ0SA.png" alt="GIF 1"></div>      <!-- 움짤 1 -->
-        <div class="caption">항목 01</div>
-      </div>
+<div class="grid">
+  <div class="card"><div class="square"><img src="https://i.imgur.com/2Squ0SA.png" alt=""></div><!-- 1 --><div class="caption">항목 01</div></div>
+  <div class="card"><div class="square"><img src="https://i.imgur.com/2Squ0SA.png" alt=""></div><!-- 2 --><div class="caption">항목 02</div></div>
+  <div class="card"><div class="square"><img src="https://i.imgur.com/2Squ0SA.png" alt=""></div><!-- 3 --><div class="caption">항목 03</div></div>
+  <div class="card"><div class="square"><img src="https://i.imgur.com/2Squ0SA.png" alt=""></div><!-- 4 --><div class="caption">항목 04</div></div>
+  <div class="card"><div class="square"><img src="https://i.imgur.com/2Squ0SA.png" alt=""></div><!-- 5 --><div class="caption">항목 05</div></div>
+  <div class="card"><div class="square"><img src="https://i.imgur.com/2Squ0SA.png" alt=""></div><!-- 6 --><div class="caption">항목 06</div></div>
+  <div class="card"><div class="square"><img src="https://i.imgur.com/2Squ0SA.png" alt=""></div><!-- 7 --><div class="caption">항목 07</div></div>
+  <div class="card"><div class="square"><img src="https://i.imgur.com/2Squ0SA.png" alt=""></div><!-- 8 --><div class="caption">항목 08</div></div>
+  <div class="card"><div class="square"><img src="https://i.imgur.com/2Squ0SA.png" alt=""></div><!-- 9 --><div class="caption">항목 09</div></div>
+</div>
 
-      <div class="card">
-        <div class="square"><img src="https://i.imgur.com/2Squ0SA.png" alt="GIF 2"></div>      <!-- 움짤 2 -->
-        <div class="caption">항목 02</div>
-      </div>
+<!-- ================= 섹션 2 ================= -->
+<div class="section-title">
+  <h2>머리카락 물리</h2>
+</div>
 
-      <div class="card">
-        <div class="square"><img src="https://i.imgur.com/2Squ0SA.png" alt="GIF 3"></div>      <!-- 움짤 3 -->
-        <div class="caption">항목 03</div>
-      </div>
+<div class="grid">
+  <!-- 10~18: 링크/문구만 바꿔서 채우면 됨 -->
+  <div class="card"><div class="square"><img src="GIF_URL_10" alt=""></div><!-- 10 --><div class="caption">항목 10</div></div>
+  <div class="card"><div class="square"><img src="GIF_URL_11" alt=""></div><!-- 11 --><div class="caption">항목 11</div></div>
+  <div class="card"><div class="square"><img src="GIF_URL_12" alt=""></div><!-- 12 --><div class="caption">항목 12</div></div>
+  <div class="card"><div class="square"><img src="GIF_URL_13" alt=""></div><!-- 13 --><div class="caption">항목 13</div></div>
+  <div class="card"><div class="square"><img src="GIF_URL_14" alt=""></div><!-- 14 --><div class="caption">항목 14</div></div>
+  <div class="card"><div class="square"><img src="GIF_URL_15" alt=""></div><!-- 15 --><div class="caption">항목 15</div></div>
+  <div class="card"><div class="square"><img src="GIF_URL_16" alt=""></div><!-- 16 --><div class="caption">항목 16</div></div>
+  <div class="card"><div class="square"><img src="GIF_URL_17" alt=""></div><!-- 17 --><div class="caption">항목 17</div></div>
+  <div class="card"><div class="square"><img src="GIF_URL_18" alt=""></div><!-- 18 --><div class="caption">항목 18</div></div>
+</div>
 
-      <div class="card">
-        <div class="square"><img src="https://i.imgur.com/2Squ0SA.png" alt="GIF 4"></div>      <!-- 움짤 4 -->
-        <div class="caption">항목 04</div>
-      </div>
+<!-- ================= 섹션 3 ================= -->
+<div class="section-title">
+  <h2>표정 / 눈</h2>
+</div>
 
-      <div class="card">
-        <div class="square"><img src="https://i.imgur.com/2Squ0SA.png" alt="GIF 5"></div>      <!-- 움짤 5 -->
-        <div class="caption">항목 05</div>
-      </div>
+<div class="grid">
+  <!-- 19~27 -->
+  <div class="card"><div class="square"><img src="GIF_URL_19" alt=""></div><!-- 19 --><div class="caption">항목 19</div></div>
+  <div class="card"><div class="square"><img src="GIF_URL_20" alt=""></div><!-- 20 --><div class="caption">항목 20</div></div>
+  <div class="card"><div class="square"><img src="GIF_URL_21" alt=""></div><!-- 21 --><div class="caption">항목 21</div></div>
+  <div class="card"><div class="square"><img src="GIF_URL_22" alt=""></div><!-- 22 --><div class="caption">항목 22</div></div>
+  <div class="card"><div class="square"><img src="GIF_URL_23" alt=""></div><!-- 23 --><div class="caption">항목 23</div></div>
+  <div class="card"><div class="square"><img src="GIF_URL_24" alt=""></div><!-- 24 --><div class="caption">항목 24</div></div>
+  <div class="card"><div class="square"><img src="GIF_URL_25" alt=""></div><!-- 25 --><div class="caption">항목 25</div></div>
+  <div class="card"><div class="square"><img src="GIF_URL_26" alt=""></div><!-- 26 --><div class="caption">항목 26</div></div>
+  <div class="card"><div class="square"><img src="GIF_URL_27" alt=""></div><!-- 27 --><div class="caption">항목 27</div></div>
+</div>
+```
 
-      <div class="card">
-        <div class="square"><img src="https://i.imgur.com/2Squ0SA.png" alt="GIF 6"></div>      <!-- 움짤 6 -->
-        <div class="caption">항목 06</div>
-      </div>
-
-      <div class="card">
-        <div class="square"><img src="https://i.imgur.com/2Squ0SA.png" alt="GIF 7"></div>      <!-- 움짤 7 -->
-        <div class="caption">항목 07</div>
-      </div>
-
-      <div class="card">
-        <div class="square"><img src="https://i.imgur.com/2Squ0SA.png" alt="GIF 8"></div>      <!-- 움짤 8 -->
-        <div class="caption">항목 08</div>
-      </div>
-
-      <div class="card">
-        <div class="square"><img src="https://i.imgur.com/2Squ0SA.png" alt="GIF 9"></div>      <!-- 움짤 9 -->
-        <div class="caption">항목 09</div>
-      </div>
-
-    </div>
   </div>
 </body>
 </html>
