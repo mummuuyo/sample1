@@ -6,7 +6,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>GIF Showcase</title>
 
+
+  
 <style>
+/* =================================
+  섹션 ON / OFF
+================================= */
+  
+#section-2{ display:none; }
+#section-3{ display:none; }
+
+/* =================================
+  디자인
+================================= */
+  
 :root{
   --ink: #262626;
   --chip: rgba(31,41,55,0.92);      /* 타이틀 배지 색 */
@@ -138,7 +151,7 @@ body{
 </div>
 
 <!-- ================= 섹션 1 ================= -->
-<div class="section-title">
+<div id ="section-1" class="section-title">
   <h2>몸 물리</h2>
 </div>
 
@@ -155,7 +168,8 @@ body{
 </div>
 
 <!-- ================= 섹션 2 ================= -->
-<div class="section-title">
+
+<div id ="section-2" class="section-title">
   <h2>머리카락 물리</h2>
 </div>
 
@@ -173,7 +187,7 @@ body{
 </div>
 
 <!-- ================= 섹션 3 ================= -->
-<div class="section-title">
+<div id ="section-3" class="section-title">
   <h2>표정 / 눈</h2>
 </div>
 
@@ -189,7 +203,7 @@ body{
   <div class="card"><div class="square"><img src="GIF_URL_26" alt=""></div><!-- 26 --><div class="caption">항목 26</div></div>
   <div class="card"><div class="square"><img src="GIF_URL_27" alt=""></div><!-- 27 --><div class="caption">항목 27</div></div>
 </div>
-```
+
 
   </div>
 </body>
