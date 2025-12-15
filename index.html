@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>GIF Showcase</title>
+
+<style>
+:root{
+  --ink: #262626;
+  --chip: rgba(31,41,55,0.92);      /* 타이틀 배지 색 */
+  --radius: 22px;                   /* 모서리 둥글기 */
+  --stroke: rgba(13,13,13,0.22);    /* 기본 테두리 */
+  --ring: rgba(13,13,13,0.35);      /* ✅ 링(선명, 페더 없음) */
+}
+
+*{ box-sizing: border-box; }
+
+body{
+  margin: 0;
+  background: transparent; /* ✅ 아트머그 융화 */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--ink);
+}
+
+.wrapper{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 0 8px;
+}
+
+/* 타이틀 */
+.title-wrap{
+  display: flex;
+  justify-content: center;
+  padding: 6px 0 16px;
+}
+.page-title{
+  margin: 0;
+  display: inline-block;
+  padding: 12px 60px;
+  border-radius: 999px;
+  background: var(--chip);
+  color: #fff;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+
+/* ✅ 9개 그리드 */
+.grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3x3 */
+  gap: 18px;
+  padding: 0 10px;
+  justify-items: center;
+}
+
+/* 카드 폭 (그리드가 알아서 맞춤) */
+.card{
+  width: 100%;
+  max-width: 320px; /* ✅ 박스 크기 조절 (280~340 추천) */
+}
+
+/* ✅ 정사각형 + 호버 효과 */
+.square{
+  width: 100%;
+  aspect-ratio: 1 / 1;              /* 정사각형 */
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #fff;
+  border: 2px solid var(--stroke);
+
+  /* 애니메이션 */
+  transform-origin: center;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+/* GIF */
+.square img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 꽉 채우기 (원하면 contain으로) */
+  display: block;
+}
+
+/* ✅ 호버 시: 살짝 확대 + 선명한 링(페더 없음) */
+.square:hover{
+  transform: scale(1.02);
+  border-color: rgba(13,13,13,0.55);
+  box-shadow: 0 0 0 3px var(--ring); /* blur 0 = 페더 없음 */
+}
+
+/* 소제목 (아래 중앙) */
+.caption{
+  margin: 10px 0 0;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+/* (선택) 화면이 아주 좁을 때 자동 줄바꿈 */
+@media (max-width: 980px){
+  .grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px){
+  .grid{ grid-template-columns: 1fr; }
+}
+</style>
+</head>
+
+<body>
+  <div class="wrapper">
+
+    <!-- ✅ 타이틀 -->
+    <div class="title-wrap">
+      <h1 class="page-title">몸, 가슴 물리</h1>
+    </div>
+
+    <!-- ✅ 9개 정사각형 -->
+    <div class="grid">
+
+      <div class="card">
+        <div class="square"><img src="GIF_URL_1" alt="GIF 1"></div>
+        <div class="caption">• 항목 01</div>
+      </div>
+
+      <div class="card">
+        <div class="square"><img src="GIF_URL_2" alt="GIF 2"></div>
+        <div class="caption">• 항목 02</div>
+      </div>
+
+      <div class="card">
+        <div class="square"><img src="GIF_URL_3" alt="GIF 3"></div>
+        <div class="caption">• 항목 03</div>
+      </div>
+
+      <div class="card">
+        <div class="square"><img src="GIF_URL_4" alt="GIF 4"></div>
+        <div class="caption">• 항목 04</div>
+      </div>
+
+      <div class="card">
+        <div class="square"><img src="GIF_URL_5" alt="GIF 5"></div>
+        <div class="caption">• 항목 05</div>
+      </div>
+
+      <div class="card">
+        <div class="square"><img src="GIF_URL_6" alt="GIF 6"></div>
+        <div class="caption">• 항목 06</div>
+      </div>
+
+      <div class="card">
+        <div class="square"><img src="GIF_URL_7" alt="GIF 7"></div>
+        <div class="caption">• 항목 07</div>
+      </div>
+
+      <div class="card">
+        <div class="square"><img src="GIF_URL_8" alt="GIF 8"></div>
+        <div class="caption">• 항목 08</div>
+      </div>
+
+      <div class="card">
+        <div class="square"><img src="GIF_URL_9" alt="GIF 9"></div>
+        <div class="caption">• 항목 09</div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
